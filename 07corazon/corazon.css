@@ -1,0 +1,58 @@
+*,
+*::after,
+*::before {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-size: 16px;
+}
+.corazon {
+	margin: auto;
+	width: 10vh;
+	height: 10vh;
+	/* border-radius: 50%; */
+	/* background-color: red; */
+	position: relative;
+    overflow: hidden;
+    animation: pulsar 1s infinite;
+}
+.corazon::before,
+.corazon::after {
+    width: 5vh;
+    height: 8vh;
+    /* border-radius: 50%; */
+	content: '';
+	position: absolute;
+	border: 1px solid red;
+    border-radius: 5vw 5vw 0 0;
+    animation: colorCorazon 1s linear infinite;
+    transform-origin: 0% 100%;
+}
+.corazon::before {
+    transform: rotate(-45deg);
+    background-color: red;
+    right: 0;
+}
+.corazon::after {
+    transform: rotate(45deg);
+    background-color: red;
+    transform-origin: 100% 100%;
+}
+@keyframes colorCorazon {
+ 10%{
+     background-color: rgb(177, 6, 6);
+ }   
+}
+@keyframes pulsar{
+    0%{
+        transform: scale(1.1,1.1);
+    }
+    50%{
+        transform: scale(.8,.8);
+        
+    }
+    100%{
+        transform: scale(1,1);
+
+    }
+}

@@ -1,0 +1,60 @@
+*,
+*::after,
+*::before {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-size: 16px;
+}
+.menu_pestanias{
+    position: relative;
+    border: 1px solid gray;
+    width: 70%;
+    padding: 1vw;
+    margin: auto;
+    background-color:#ddd7;
+    font-size: 1rem;
+
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.menu_pestanias input[type="radio"]{
+    display: none;
+}
+.menu_pestanias label{
+position: relative;
+width: calc(100%/4 -  .5rem);
+text-align:  center;
+cursor: pointer;
+text-transform: uppercase;
+z-index: 1;
+}
+.menu_pestanias label:hover{
+    color:#fff;
+}
+.menu_pestanias input[type="radio"]:checked + label{
+    color: #fff;
+}
+.tab-bg-hover{
+    position: absolute;
+    width: calc(100%/4 -  .5rem);
+    height: 2rem;
+    border-radius: .5rem;
+    background-image: linear-gradient(90deg,red,rgb(184, 4, 4),rgb(116, 4, 4),red);
+    transition: transform .3s ease-in-out;
+}
+#tab-1:checked ~ .tab-bg-hover {
+transform: translateX(0);
+}
+#tab-2:checked ~ .tab-bg-hover {
+transform: translateX(100%);
+}
+#tab-3:checked ~ .tab-bg-hover {
+transform: translateX(200%);
+}
+#tab-4:checked ~ .tab-bg-hover {
+transform: translateX(300%);
+}

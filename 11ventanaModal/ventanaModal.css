@@ -1,0 +1,99 @@
+*,
+*::after,
+*::before {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-size: 16px;
+}
+.modal {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+	background-color: #0008;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    opacity: 0;
+    z-index: 997;
+    pointer-events: none;
+}
+.modal-container {
+    width: 70%;
+	height: 70vh;
+	display: grid;
+    padding: .5rem;
+	grid-template-rows: 0.5fr 0.5fr 1fr 1fr;
+    background-color: white;
+    border: thick double green;
+    border-radius: .5rem;
+}
+.modal-close {
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: thick double green;
+    border-radius: 50%;
+    color: green;
+	font-size: 2rem;
+    text-align: center;
+    transition: transform .3s linear;
+}
+.modal-close:hover{
+    transform: scale(1.1,1.1);
+    background-color: rgb(3, 73, 3);
+    border: thick double white;
+    color: white;
+}
+
+/* FUNCIONAMIENTO */
+.modal:target{
+    opacity: 1;
+    pointer-events: auto;
+    
+}
+
+
+
+/* DISENIO DE ESTRELLA */
+@keyframes introStry {
+    0%{
+        transform: perspective(100vh) rotateX(15deg) translateY(100%);
+    }
+    100%{
+        transform: perspective(100vh) rotateX(25deg) translateY(-200%);
+
+    }
+}
+.star-wars{
+    background-image: url(./start.gif);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    width: 100%;
+    height: 100vh;
+    /* overflow: hidden; */
+    color: #ffb13a;
+}
+
+.star-wars-container{
+    margin: auto;
+    text-align: justify;
+    letter-spacing: .2rem;
+    width: 80%;
+
+    animation: introStry 20s linear infinite;
+}
+.star-wars h2,.star-wars h3{
+    font-size: 5vh;
+    text-align: center;
+}
+.star-wars p{
+    font-size: 4vh;
+    line-height: 4rem;
+}
+

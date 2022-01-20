@@ -1,0 +1,55 @@
+*,
+*::after,
+*::before {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-size: 16px;
+}
+.btn{
+    position: relative;
+    border: none;
+    width: 20vw;
+    height: 2.5vw;
+    padding: .2rem;
+    /* border: .2vw solid red; */
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor:pointer;
+    box-shadow: .25rem .25rem .5rem rgba(0, 0, 0, .1);
+    overflow: hidden;
+}
+.animacionBoton::after{
+    position: absolute;
+    
+    content: "";
+    bottom: 0;
+    width: 0;
+    height: .2rem;
+    background-color: #d00;
+    transition: width .5s ease,left .5s ease,right .5s ease;
+}
+.animacionBoton:hover::after{
+    width: 100%;
+}
+.to_left::after{
+    left: 0;
+}
+.to_centro::after{
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+.to_right::after{
+    left: 0;
+}
+.btnDegradado{
+    color:white;
+    /* background-position: right; */
+    background-size: 300% 200%;
+    background-image: linear-gradient(to right, rgb(4, 4, 58), rgb(5, 5, 95), rgb(17, 17, 177), rgb(3, 3, 100));
+    transition: background-position .5s ease-in-out;
+}
+.btnDegradado:hover{
+    background-position: 100% 100%;
+}

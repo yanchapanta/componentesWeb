@@ -1,0 +1,110 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+img{
+    width: 100%;
+    height:100%;
+    object-fit: cover;
+    object-position: center;
+}
+.leon{
+
+    width: 60%;
+}
+.leon_container{
+    
+    position: relative;
+}
+
+#luz{
+    display: grid;
+    /* border: 1px solid rgb(229, 245, 11); */
+    
+    width: 30vw;
+    height: 30vw;
+    grid-template-areas: "circle_2 circle_3" 
+                        "circle_1 circle_4" ;
+
+    position: absolute;
+    
+    
+}
+.izquierda{
+    top: 1.9%;
+    left: 6%;
+    /* opacity: .5; */
+    animation: ratacionIn 8s linear infinite;
+    
+}
+.derecha{
+    top: 2.9%;
+    left: 19%;
+    /* opacity: .5; */
+    animation: ratacionIn 8s linear 3s infinite;
+    
+}
+#luz .circle_1{
+    grid-area: circle_1;
+    background-image: conic-gradient(transparent 11%,#f10a12 12.5%,transparent 14%);
+    animation: brillarIn 2s linear 2s infinite alternate both;
+}
+
+#luz .circle_2{
+    grid-area: circle_2;
+    background-image: conic-gradient(transparent 36%,#f10a12 37.5%,transparent 39%);
+    animation: brillarOut 2s linear 2s infinite alternate both;
+}
+#luz .circle_3{
+    grid-area: circle_3;
+    background-image: conic-gradient(transparent 61%,#f10a12 62.5%,transparent 64%);
+    animation: brillarIn 2s linear 2s infinite alternate both;
+}
+
+#luz .circle_4{
+    grid-area: circle_4;    
+    background-image:conic-gradient(transparent 86%,#f10a12 87.5%,transparent 89%);
+    animation: brillarOut 2s linear infinite ;
+}
+
+.centro_fondo{
+
+    width: 60px;
+    height: 60px;
+    /* border: thick solid green; */
+    border-radius: 50%;
+    position: absolute; 
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;  
+    background-image: radial-gradient(#ffffffc2 2%, transparent 10% );      
+}
+
+@keyframes brillarIn{
+   0%{
+    opacity: 0;
+}
+100% {
+       opacity: 1;
+   }
+}
+@keyframes brillarOut{
+   0%{
+    opacity: 1;
+}
+100% {
+       opacity: 0;
+   }
+}
+@keyframes ratacionIn{
+    0%{
+      transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}

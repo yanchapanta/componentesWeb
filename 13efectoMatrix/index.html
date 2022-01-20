@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Efecto Matrix</title>
+</head>
+<body>
+    <h1>Efecto Matrix</h1>
+    <canvas width="500" height="500" id="lienza">
+
+    </canvas>
+    <script>
+        const canvas=document.getElementById('lienza');
+        const ctx=canvas.getContext('2d');
+
+        canvas.width=document.body.offsetWidth;
+         const w= canvas.width;
+         const h= canvas.height;
+         ctx.fillStyle='#000';
+         ctx.fillRect(0,0,w,h);
+         
+         const cols=Math.floor(w/20)+1;
+         const posision_y= Array(cols).fill(0);
+         function matrix(){
+             ctx.fillStyle='#0001';
+             ctx.fillRect(0,0,w,h);
+
+             ctx.fillStyle='#0f0';
+             ctx.font='15pt monospace';
+             posision_y.forEach((y,ind)=>{
+                 const text=String.fromCharCode(Math.random()*128);
+                 
+                 const x=ind*120;
+                 ctx.fillText(text,x,y);
+                 if (y>100+Math.random()*10000) {
+                     posision_y[ind]=0;
+                 }else posision_y[ind]=y+20;
+             })
+         }
+         setInterval(matrix, 50);;
+    </script>
+</body>
+</html>

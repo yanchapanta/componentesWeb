@@ -1,0 +1,108 @@
+*,
+*::after,
+*::before {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-size: 16px;
+}
+.off-canva-btn {
+	position: fixed;
+	width: 3rem;
+	height: 3rem;
+	bottom: 0;
+	right: 0;
+	cursor: pointer;
+
+	z-index: 999;
+    bottom: 1rem;
+    right: 1rem;
+    opacity: 0;
+}
+.off-canva-burguer {
+    position: fixed;
+	
+	width: 3rem;
+	height: 0.6rem;
+	background-color: #d00;
+	border-radius: 0.3rem;
+	transform: rotate(0deg) translate(0, -1.2rem);
+    
+	z-index: 998;
+	transition: transform 0.5s linear, background-color .2s linear;
+    transform-origin: top left;
+    bottom: 1rem;
+    right: 1rem;
+}
+.off-canva-burguer::before,
+.off-canva-burguer::after {
+	display: block;
+	content: '';
+	width: 100%;
+	height: 0.6rem;
+	background-color: #d00;
+	border-radius: 0.3rem;
+
+    transition: transform .3s ease;
+}
+.off-canva-burguer::before {
+	transform: rotate(0deg) translate(0, -0.9rem);
+}
+.off-canva-burguer::after {
+	transform: rotate(0deg) translate(0, 0.3rem);
+}
+.off-canva-menu {
+	display: flex;
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	justify-content: center;
+	align-items: center;
+	background-color: #0008;
+
+	z-index: 997;
+	transform: translate(-100%, 0);
+}
+.off-canva-menu-container {
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+.off-canva-menu-link {
+	text-decoration: none;
+	border-bottom: thick solid rgb(116, 6, 6);
+	font-size: 1.5rem;
+	color: #fff;
+	text-align: center;
+	padding: 2rem;
+
+	transition: border-bottom 0.3s linear;
+}
+.off-canva-menu-link:first-child {
+	border-top: thick solid rgb(116, 6, 6);
+}
+
+.off-canva-menu-link:hover {
+	border-bottom: thick solid #d00;
+}
+
+/* funcionamiento */
+/* esto simula el boton */
+.off-canva-btn:checked ~ .off-canva-menu{
+    transform:translate(0,0)
+}
+/* formando la x */
+.off-canva-btn:checked + .off-canva-burguer {
+	background-color: transparent;
+}
+.off-canva-btn:checked + .off-canva-burguer::before {
+    transform: rotate(45deg) translate(0,0);
+}
+.off-canva-btn:checked + .off-canva-burguer::after{
+    transform: rotate(-45deg) translate(0.4rem, -0.5rem);
+
+} 

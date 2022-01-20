@@ -1,0 +1,40 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.lista ul{
+    
+    list-style-type: none; 
+    counter-reset: lista;
+    column-count: 4;
+    gap: 1rem;
+}
+.lista ul li{
+    background-color: #ccb121;
+    color: white;
+}
+.lista ul li::before{
+    counter-increment: lista;
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    content: counter(lista)": ";
+    padding-left: 2rem;
+    background-image: url('../asset/book.png');   
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-origin: border-box;
+    vertical-align:clamp(-.1rem,-.2rem,-.2rem) ;
+    filter: invert(1);
+    color: white;
+    
+}
+
+.lista ul li a{
+    display: inline-flex;
+    text-decoration: none;
+    padding-left: .5rem;
+    color: white;
+}
